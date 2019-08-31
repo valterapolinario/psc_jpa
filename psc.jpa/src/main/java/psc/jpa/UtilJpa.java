@@ -9,7 +9,7 @@ public class UtilJpa {
 
 	public static void createEntityManagerFactory() {
 		if (emf == null) {
-			emf = Persistence.createEntityManagerFactory("PSC");
+			emf = Persistence.createEntityManagerFactory("PSC_JPA");
 		}
 	}
 
