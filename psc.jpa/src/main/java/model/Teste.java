@@ -4,10 +4,10 @@ package model;
 public class Teste {
 
 	public static void main(String[] args) {
-		Cliente c = new Cliente();
-		c.setEmail("lll");
+		//Cliente c = new Cliente();
+		//c.setEmail("loloa");
 		DAOCliente dc = new DAOCliente();
-		dc.saveorUpdate(c);
+		dc.findAll(Cliente.class);
 	}
 
 }

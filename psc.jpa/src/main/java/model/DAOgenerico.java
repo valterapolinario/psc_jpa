@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import psc.jpa.UtilJpa;
@@ -9,6 +11,7 @@ public abstract  class DAOgenerico<T extends EntidadeBase> {
 	
 	public T findById(Class<T> classe,int id) {
 		return em.find(classe, id);
+		
 	}
 	public void saveorUpdate(T obj) {
 		try {
@@ -33,5 +36,8 @@ public abstract  class DAOgenerico<T extends EntidadeBase> {
      em.getTransaction().rollback();
  }
 	 }
+	 
+
 }
+
 

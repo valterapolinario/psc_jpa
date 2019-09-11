@@ -3,24 +3,21 @@ package model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-@Entity
-public class Identidade implements EntidadeBase {
-	private int   id;
+
+@Embeddable
+public class Identidade {
+
 	private String nIdentidade;
 	private String nome;
 	private String cpf;
-	private Date   dataNascimento;
+	private Date dataNascimento;
 	private String orgaoEmissor;
-	private Date   dataEmissao;
-	
-	public int getID() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	private Date dataEmissao;
 
 	public String getnIdentidade() {
 		return nIdentidade;
@@ -68,21 +65,6 @@ public class Identidade implements EntidadeBase {
 
 	public void setDataEmissao(Date dataEmissao) {
 		this.dataEmissao = dataEmissao;
-	}
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Object getPK() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 }
