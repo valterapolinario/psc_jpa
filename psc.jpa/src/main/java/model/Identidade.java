@@ -1,5 +1,7 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,6 +13,37 @@ import javax.persistence.Id;
 
 @Embeddable
 public class Identidade {
+
+	public Identidade() {
+		super();
+	}
+
+	public Identidade(String nIdentidade, String nome, String cpf, String dataNascimento, String orgaoEmissor,
+			String dataEmissao) {
+		super();
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/YYYY");
+		Date dtN = null;
+		try {
+			dtN = formato.parse(dataNascimento);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/YYYY");
+		Date dtE = null;
+		try {
+			dtE = formato.parse(dataEmissao);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.nIdentidade = nIdentidade;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dataNascimento = dtN;
+		this.orgaoEmissor = orgaoEmissor;
+		this.dataEmissao = dtE;
+	}
 
 	private String nIdentidade;
 	private String nome;
