@@ -13,7 +13,7 @@ public class Teste {
 
 	public static void main(String[] args) {
 		Funcionario fc = new Funcionario();
-		fc.setNome("joca");
+		fc.setNome("jonas");
 		
 		DAOfuncionario dao = new DAOfuncionario();
 		dao.saveorUpdate(fc);
